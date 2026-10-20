@@ -1,59 +1,56 @@
-# 🔍 Binary Search
+# Binary Search
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python 3](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-## 📌 Sobre o Projeto
+An interactive command-line implementation of the binary search algorithm in Python that shows where the number was found and how many attempts it took.
 
-O **Binary Search** é um script em Python que implementa o algoritmo de **busca binária** de forma interativa via terminal.
+## Why binary search
 
-Neste projeto, pratiquei a lógica de divisão de intervalos característica da busca binária, exibindo ao usuário não só o resultado da busca, mas também a posição (índice) encontrada e o número de tentativas realizadas até chegar lá — uma forma simples de visualizar na prática por que esse algoritmo é muito mais eficiente que uma busca linear.
+Binary search finds an item in a **sorted** list by checking the middle element and discarding the half where the item can't be. Each attempt halves the search range, so it takes at most about log₂(n) attempts instead of n:
 
-## ⚙️ Funcionalidades
+| List size | Linear search (worst case) | Binary search (worst case) |
+|---|---|---|
+| 100 | 100 attempts | 7 attempts |
+| 1,000,000 | 1,000,000 attempts | 20 attempts |
 
-- **Geração de lista ordenada:** cria automaticamente uma lista de `0` até `tamanho - 1`, conforme o tamanho informado.
-- **Busca binária interativa:** localiza o número informado pelo usuário dividindo o intervalo de busca pela metade a cada tentativa.
-- **Feedback detalhado:** exibe se o número foi encontrado, em qual posição (índice) e quantas tentativas foram necessárias.
+Showing the number of attempts makes that difference visible when you run the script.
 
-## 🛠️ Tecnologias Utilizadas
+## Features
 
-- Python 3
+- Builds a sorted list from `0` to `size - 1` with the size you choose
+- Searches for the number you enter, halving the range on every attempt
+- Reports whether the number was found, its index and the total number of attempts
 
-## 🚀 Como Executar o Projeto
+## Tech stack
 
-### Pré-requisitos
+Python 3 — no external dependencies.
 
-- Python 3 instalado
+## Running
 
-### Passo a passo
+```bash
+git clone https://github.com/jg-abreu/binary-search.git
+cd binary-search
+python binary_search.py
+```
 
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/jg-abreu/binary-search.git
-   ```
+Example:
 
-2. Navegue até a pasta do projeto:
-   ```bash
-   cd binary-search
-   ```
+```
+Enter the size of the list: 1000000
+Which number do you want to find? 999999
 
-3. Execute o script:
-   ```bash
-   python pesquisa_binaria_2.py
-   ```
+✅ Found the number 999999.
+📍 Position in the list (index): 999999
+🔢 Total attempts: 20
+```
 
-4. Informe o tamanho da lista e o número que deseja encontrar:
-   ```
-   Digite o tamanho da lista: 100
-   Qual número deseja encontrar? 42
+## License
 
-   ✅ Sucesso! Encontrei o número 42.
-   📍 Posição na lista (índice): 42
-   🔢 Total de tentativas: 7
-   ```
+Released under the [MIT License](LICENSE).
 
-## 👨‍💻 Autor
+## Author
 
-**João Abreu**
-Desenvolvedor Backend Java | Spring Boot | PostgreSQL | API REST
+**João Abreu** — back-end developer and Computer Science student in Rio de Janeiro, Brazil.
 
-[🔗 LinkedIn](https://linkedin.com/in/SEU-USUARIO) · [🔗 GitHub](https://github.com/jg-abreu)
+[GitHub](https://github.com/jg-abreu) · [LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-abreuuu) · jgabreudev@gmail.com
