@@ -1,56 +1,40 @@
 # Binary Search
 
-![Python 3](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Python 3](https://img.shields.io/badge/Python-3-3776AB) [![MIT license](https://img.shields.io/badge/license-MIT-39764D)](LICENSE)
 
-An interactive command-line implementation of the binary search algorithm in Python that shows where the number was found and how many attempts it took.
+I built this interactive Python script to see how many comparisons binary search makes. Enter a list size and a target to find out whether the target is present, its zero-based index if found, and how many attempts the search took.
 
-## Why binary search
+[Run the script](#run-the-script) · [See examples](#examples)
 
-Binary search finds an item in a **sorted** list by checking the middle element and discarding the half where the item can't be. Each attempt halves the search range, so it takes at most about log₂(n) attempts instead of n:
+## Run the script
 
-| List size | Linear search (worst case) | Binary search (worst case) |
-|---|---|---|
-| 100 | 100 attempts | 7 attempts |
-| 1,000,000 | 1,000,000 attempts | 20 attempts |
+You need Python 3 and Git to follow these steps. The script uses only the Python standard library.
 
-Showing the number of attempts makes that difference visible when you run the script.
-
-## Features
-
-- Builds a sorted list from `0` to `size - 1` with the size you choose
-- Searches for the number you enter, halving the range on every attempt
-- Reports whether the number was found, its index and the total number of attempts
-
-## Tech stack
-
-Python 3 — no external dependencies.
-
-## Running
-
-```bash
+```sh
 git clone https://github.com/jg-abreu/binary-search.git
 cd binary-search
 python binary_search.py
 ```
 
-Example:
+Enter a positive list size and an integer to search for. The script builds a sorted list from `0` through `size - 1`.
 
-```
-Enter the size of the list: 1000000
-Which number do you want to find? 999999
+## Examples
 
-✅ Found the number 999999.
-📍 Position in the list (index): 999999
-🔢 Total attempts: 20
-```
+Each attempt checks one midpoint. These are two runs of the script:
+
+| List size | Target | Result | Attempts |
+| ---: | ---: | --- | ---: |
+| 1,000,000 | 999,999 | Found at index 999,999 | 20 |
+| 8 | 8 | Target absent | 4 |
+
+## How it works
+
+The search compares the target with the middle element of the current range. If they differ, it keeps the half that can still contain the target. It stops when it finds a match or the range is empty.
+
+For a list of size *n*, the search takes **O(log n)** time in the worst case and uses **O(1)** extra space. Building the list with `list(range(size))` takes **O(n)** time and **O(n)** space, so list creation determines the overall time and space complexity of this script.
+
+[Read the Python source](binary_search.py)
 
 ## License
 
-Released under the [MIT License](LICENSE).
-
-## Author
-
-**João Abreu** — back-end developer and Computer Science student in Rio de Janeiro, Brazil.
-
-[GitHub](https://github.com/jg-abreu) · [LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-abreuuu) · jgabreudev@gmail.com
+This project is available under the [MIT License](LICENSE).
