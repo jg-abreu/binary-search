@@ -1,6 +1,6 @@
 # Binary Search
 
-![Python 3](https://img.shields.io/badge/Python-3-3776AB) [![MIT license](https://img.shields.io/badge/license-MIT-39764D)](LICENSE)
+![Language: Python](https://img.shields.io/badge/language-Python-3776AB?style=flat) [![License: MIT](https://img.shields.io/badge/license-MIT-39764D?style=flat)](LICENSE)
 
 I built this interactive Python script to see how many comparisons binary search makes. Enter a list size and a target to find out whether the target is present, its zero-based index if found, and how many attempts the search took.
 
